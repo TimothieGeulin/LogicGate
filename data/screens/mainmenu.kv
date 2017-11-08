@@ -1,0 +1,19 @@
+GameScreen:
+    fullscreen: True
+    name: 'MainMenu'
+    Image:
+        source: 'data/sprites/title.png'
+        size_hint: 0.25, 0.25
+    Button:
+        text: 'Jouer'
+        size_hint: (.2, .1)
+        pos_hint: {'x': .4, 'y': .275}
+        on_release: app.go_levelselect()
+    Button:
+        text: 'Option'
+        size_hint: (.2, .1)
+        pos_hint: {'x': .4, 'y': .150}
+    Button:
+        text: 'Quitter'
+        size_hint: (.2, .1)
+        pos_hint: {'x': .4, 'y': .025}
