@@ -1,14 +1,11 @@
 GameScreen:
     fullscreen: True
     name: 'MainMenu'
-    Label:
-        text:'Level 1!'
+    
+    FloatLayout:
+        Gate:
 
-    AnchorLayout:
-        size_hint: (.2, .2)
-        anchor_x:'right'
-        anchor_y:'bottom'
         Button:
             text: '<'
-            size_hint: (.2, 1)
+            size_hint: (.2,  .2)
             on_release: app.go_levelselect()
