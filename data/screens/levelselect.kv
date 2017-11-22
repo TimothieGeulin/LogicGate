@@ -1,39 +1,37 @@
 GameScreen:
     fullscreen: True
     name: 'LevelSelect'
+    FloatLayout:
+        StackLayout:
+            padding: 0
+            spacing: 0
+            Button:
+                color: 1,1,1,1
+                text: '1'
+                size_hint: (.2, .2)
+                on_release: app.go_level1()
+            Button:
+                color: 1,0,0,1
+                text: '2'
+                size_hint: (.2, .2)
+            Button:
+                color: 1,0,0,1
+                text: '3'
+                size_hint: (.2, .2)
+            Button:
+                color: 1,0,0,1
+                text: '4'
+                size_hint: (.2, .2)
+            Button:
+                color: 1,0,0,1
+                text: '5'
+                size_hint: (.2, .2)
+            Button:
+                color: 1,0,0,1
+                text: '6'
+                size_hint: (.2, .2)
 
-    StackLayout:
-        Button:
-            color: 1,1,1,1
-            text: '1'
-            size_hint: (.2, .1)
-            on_release: app.go_level1()
-        Button:
-            color: 1,0,0,1
-            text: '2'
-            size_hint: (.2, .1)
-        Button:
-            color: 1,0,0,1
-            text: '3'
-            size_hint: (.2, .1)
-        Button:
-            color: 1,0,0,1
-            text: '4'
-            size_hint: (.2, .1)
-        Button:
-            color: 1,0,0,1
-            text: '5'
-            size_hint: (.2, .1)
-        Button:
-            color: 1,0,0,1
-            text: '6'
-            size_hint: (.2, .1)
-
-    AnchorLayout:
-        size_hint: (.2, .2)
-        anchor_x:'right'
-        anchor_y:'bottom'
         Button:
             text: '<'
-            size_hint: (.2, 1)
+            size_hint: (.2, .2)
             on_release: app.go_mainmenu()
