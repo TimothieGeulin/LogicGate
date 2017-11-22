@@ -1,0 +1,15 @@
+#:kivy 1.0.9  
+
+<Gate>:
+    size: 200, 200
+    canvas:
+        Rectangle:
+            pos:self.pos
+            size:self.size
+
+<LGGame>:
+    Button:
+        text: 'Porte OU'
+        on_press: app.game.new_gate()
+        
+

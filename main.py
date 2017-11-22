@@ -4,28 +4,43 @@ kivy.require('1.1.1')
 from kivy.app import App
 from kivy.uix.widget import Widget
 from kivy.properties import NumericProperty, ReferenceListProperty,\
-    ObjectProperty
+    ObjectProperty, BooleanProperty
 from kivy.vector import Vector
 from kivy.clock import Clock
 
 
-class PongPaddle(Widget):
-    score = NumericProperty(0)
-
-
-class PongGame(Widget):
-    player1 = ObjectProperty(None)
+class Gate(Widget):
+    selected = BooleanProperty(0)
+    
+    
+class LGGame(Widget):
+    gateList = []
 
     def on_touch_move(self, touch):
-        if (touch.x > self.player1.x) & (touch.y > self.player1.y) & (touch.x < self.player1.x + self.player1.size[0]) & (touch.y < self.player1.y + self.player1.size[1]):
-            self.player1.center_y = touch.y
-            self.player1.center_x = touch.x
+		for gate in self.gateList:
+			if (touch.x > gate.x) & (touch.y > gate.y) & (touch.x < gate.x + gate.size[0]) & (touch.y < gate.y + gate.size[1]):
+				gate.center_y = touch.y
+				gate.center_x = touch.x
+				break
+            
+    def new_gate(self):
+		gate = Gate()
+		self.add_widget(gate)
+		self.gateList.append(gate)
+		
+	def cycle(my_list, start_at=None):
+		start_at = 0 if start_at is None else my_list.index(start_at)
+		while True:
+			yield my_list[start_at]
+			start_at = (start_at + 1) % len(my_list)
+		
 
-class PongApp(App):
-    def build(self):
-        game = PongGame()
-        return game
+class LGApp(App):
+	game = Widget()
+	def build(self):
+		self.game = LGGame()
+		return self.game
 
 
 if __name__ == '__main__':
-    PongApp().run()
+    LGApp().run()
