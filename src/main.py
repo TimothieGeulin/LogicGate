@@ -14,9 +14,9 @@ from kivy.clock import Clock
 """
 Classe basique d'une porte logique.
 Attributs:
-	-selected: indique si l'objet est en train d'etre déplacé
-	-outx: coordonnées x de la fin du fil de sortie
-	-outy: coordonées y de la fin du fil de sortie
+	-selected: indique si l'objet est en train d'etre deplace
+	-outx: coordonnees x de la fin du fil de sortie
+	-outy: coordonees y de la fin du fil de sortie
 """
 class Gate(Widget):
 
@@ -29,15 +29,15 @@ class Gate(Widget):
 
 
 """
-Classe définissant les évènements qui constituent le fonctionnement du jeu
+Classe definissant les evenements qui constituent le fonctionnement du jeu
 Attributs:
 	-gateList: Liste des portes actuellement en jeu
 """
 class LGGame(Widget):
 	gateList = []
 	
-	#Evenement se déclenchant au toucher de l'utilisateur sur l'écran ou au clic de la souris
-	#Permet la selection et le déplacement des portes
+	#Evenement se declenchant au toucher de l'utilisateur sur l'ecran ou au clic de la souris
+	#Permet la selection et le deplacement des portes
 	def on_touch_move(self, touch):
 		gate_grab = False
 		
@@ -59,7 +59,7 @@ class LGGame(Widget):
 					gate_grab = True
 					return
 			
-	#Methode de création d'une nouvelle porte, appelé par le bouton correspondant dans l'interface
+	#Methode de creation d'une nouvelle porte, appele par le bouton correspondant dans l'interface
 	def new_gate(self):
 		gate = Gate()
 		self.add_widget(gate)
@@ -70,9 +70,9 @@ class LGGame(Widget):
 
 
 """
-Classe définissant l'application, elle représente le coeur du programme
+Classe definissant l'application, elle represente le coeur du programme
 Attributs:
-	-game: Le jeu lui même, qui sera par la suite récupéré par le processus de Kivy
+	-game: Le jeu lui meme, qui sera par la suite recupere par le processus de Kivy
 """
 class LGApp(App):
 	game = Widget()
