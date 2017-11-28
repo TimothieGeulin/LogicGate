@@ -12,28 +12,58 @@ from kivy.clock import Clock
 class Gate(Widget):
     selected = BooleanProperty(0)
     
+#class Wire(Widget):
+#	sourceGate = Gate()
+#	targetGate = Gate()
+#
+#	def __init__(self, SG, TG):
+#		self.sourceGate = SG
+#		self.targetGate = TG
     
 class LGGame(Widget):
-    gateList = []
+	gateList = []
+	#wireList = []
+	#wiring = False
 
-    def on_touch_move(self, touch):
+
+	def on_touch_move(self, touch):
+		gate_grab = False
+		
+		#for gate in self.gateList:
+		#	if(touch.x > gate.x+180) & (touch.y > gate.y+80) & (touch.x < gate.x+180 + gate.outSize[0]) & (touch.y < gate.y+80 + gate.outSize[1]):
+		#		self.wiring = True
+		#		new_wire(self, gate)
+		#		return
+		
 		for gate in self.gateList:
-			if (touch.x > gate.x) & (touch.y > gate.y) & (touch.x < gate.x + gate.size[0]) & (touch.y < gate.y + gate.size[1]):
-				gate.center_y = touch.y
-				gate.center_x = touch.x
-				break
-            
-    def new_gate(self):
+			if(gate.selected) & (touch.x > gate.x) & (touch.y > gate.y) & (touch.x < gate.x + gate.size[0]) & (touch.y < gate.y + gate.size[1]):
+				if not (gate_grab):
+					gate.center_y = touch.y
+					gate.center_x = touch.x
+					gate_grab = True
+			else:
+				gate.selected = False
+
+		if not (gate_grab):
+			for gate in self.gateList:
+				if(touch.x > gate.x) & (touch.y > gate.y) & (touch.x < gate.x + gate.size[0]) & (touch.y < gate.y + gate.size[1]):
+					gate.center_y = touch.y
+					gate.center_x = touch.x
+					gate.selected = True
+					gate_grab = True
+					return
+					
+					            
+	def new_gate(self):
 		gate = Gate()
 		self.add_widget(gate)
 		self.gateList.append(gate)
 		
-	def cycle(my_list, start_at=None):
-		start_at = 0 if start_at is None else my_list.index(start_at)
-		while True:
-			yield my_list[start_at]
-			start_at = (start_at + 1) % len(my_list)
-		
+	#def new_wire(self, SG, TG):
+	#	wire = Wire(self,SG,TG)
+	#	self.add_widget(wire)
+	#	self.wireList.append(wire)
+	
 
 class LGApp(App):
 	game = Widget()

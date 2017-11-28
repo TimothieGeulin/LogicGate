@@ -1,11 +1,29 @@
 #:kivy 1.0.9  
 
+<Wire>
+    size: 2
+    canvas:
+        Line:
+            points: [self.x1,self.y1,self.x2,self.y2]
+            width: self.size
+
 <Gate>:
     size: 200, 200
+    entrySize: 40,40
+    outSize: 40,40
     canvas:
         Rectangle:
             pos:self.pos
             size:self.size
+        Ellipse:
+            pos:(self.x-20,self.y+30)
+            size:self.entrySize
+        Ellipse:
+            pos:(self.x-20,self.y+130)
+            size:self.entrySize
+        Ellipse:
+            pos:(self.x+180,self.y+80)
+            size:self.outSize
 
 <LGGame>:
     Button:
