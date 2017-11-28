@@ -11,6 +11,8 @@ from kivy.clock import Clock
 
 class Gate(Widget):
     selected = BooleanProperty(0)
+    outx = NumericProperty(0)
+    outy = NumericProperty(0)
     
 #class Wire(Widget):
 #	sourceGate = Gate()
@@ -22,7 +24,6 @@ class Gate(Widget):
     
 class LGGame(Widget):
 	gateList = []
-	#wireList = []
 	#wiring = False
 
 

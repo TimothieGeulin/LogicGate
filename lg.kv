@@ -1,12 +1,5 @@
 #:kivy 1.0.9  
 
-<Wire>
-    size: 2
-    canvas:
-        Line:
-            points: [self.x1,self.y1,self.x2,self.y2]
-            width: self.size
-
 <Gate>:
     size: 200, 200
     entrySize: 40,40
@@ -24,10 +17,16 @@
         Ellipse:
             pos:(self.x+180,self.y+80)
             size:self.outSize
+        Line:
+            points: [self.x+180,self.y+80,self.outx,self.outy]
+            width: 2
 
 <LGGame>:
     Button:
         text: 'Porte OU'
+        on_press: app.game.new_gate()
+    Button:
+        text: 'Porte ET'
         on_press: app.game.new_gate()
         
 
