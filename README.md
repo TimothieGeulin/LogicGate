@@ -4,11 +4,11 @@ permettre l'apprentissage de la logique au travers d'une succession d’exercice
 
 Détails des dossiers :
 
-Documents : Contient tout les documents réaliser lors du dévellopement du projet.
-	Cahiers des charges : Contient le détails des objectifs du projet.
-	Dossier développement Scrum : Contient les sprints backlogs de chaque phase du dévellopement.
-	Kivy et Python : 
-		Dico_python : Un enssemble de documents expliquent la syntaxe de python.
-		kivy_exemples_type : Des exemples de codes pour l'utilisation des bases de Kivy.
-Menu : Contient les codes du menu de l'application.
-src : Contient les codes du système de jeu.
+* **Documents** : Contient tout les documents réaliser lors du dévellopement du projet.
+	* **Cahiers des charges** : Contient le détails des objectifs du projet.
+	* **Dossier développement Scrum** : Contient les sprints backlogs de chaque phase du dévellopement.
+	* **Kivy et Python** : 
+		* **Dico_python** : Un ensemble de documents expliquent la syntaxe de python.
+		* **kivy_exemples_type** : Des exemples de codes pour l'utilisation des bases de Kivy.
+* **Menu** : Contient les codes du menu de l'application.
+* **src** : Contient les codes du système de jeu.
