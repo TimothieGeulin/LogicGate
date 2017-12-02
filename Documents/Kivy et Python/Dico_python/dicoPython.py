@@ -1,3 +1,7 @@
+#
+# Dictionnaire/Lexique des bases en python
+#
+
 import os # On importe le module os qui dispose de variables 
           # et de fonctions utiles pour dialoguer avec votre 
           # systeme d'exploitation
@@ -95,7 +99,7 @@ from multiply import *
 
 ########################################################################
 
-# CLASS methodes
+# Exemples de CLASS methodes
 
 chaine = "NE CRIE PAS SI FORT !"
 #print chaine.lower() # Mettre la chaine en minuscule
