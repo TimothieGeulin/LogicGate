@@ -1,0 +1,1 @@
+Tous ces fichiers sont des fichiers python proposant des exemples types afin d'apprendre à manipuler Kivy.
